@@ -4,11 +4,11 @@ pub mod middlewares {
     use std::*;
 
     use super::Args;
-    pub fn fetch_file(arg: &Args) -> Result<String, ()> {
+    pub fn fetch_file(arg: &Args) -> Result<String, &str> {
         let path: &Path = Path::new(&(arg.path));
         match &path.exists() {
             true => Ok(path.display().to_string()),
-            _ => Err(()),
+            _ => Err("filed not found or does not exit. check Your path"),
         }
     }
 }

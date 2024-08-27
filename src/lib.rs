@@ -4,3 +4,4 @@ mod middleware;
 
 pub use crate::middleware::middlewares;
 pub use crate::middleware::Args;
+pub use crate::middleware::Opt;
