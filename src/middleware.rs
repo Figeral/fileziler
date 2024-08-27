@@ -4,9 +4,12 @@ pub mod middlewares {
     use std::*;
 
     use super::Args;
-    pub fn fetch_file(arg: &Args) -> &Path {
+    pub fn fetch_file(arg: &Args) -> Result<String, ()> {
         let path: &Path = Path::new(&(arg.path));
-        path
+        match &path.exists() {
+            true => Ok(path.display().to_string()),
+            _ => Err(()),
+        }
     }
 }
 
@@ -27,6 +30,6 @@ pub struct Args {
 #[derive(Debug, Clone, ValueEnum, Parser)]
 #[command()]
 pub enum Opt {
-    compress,
-    decompress,
+    Compress,
+    Decompress,
 }

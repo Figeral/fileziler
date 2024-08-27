@@ -1,12 +1,13 @@
-use clap::{Parser, ValueEnum};
+use clap::Parser;
 
+use fileziler::middlewares;
 use fileziler::Args;
-
 fn main() {
     let args = Args::parse();
     start(&args);
 }
 
 fn start(args: &Args) {
-    println!("{:?}", args.opt);
+    let file = middlewares::fetch_file(args);
+    println!("{:?}", file.ok());
 }
