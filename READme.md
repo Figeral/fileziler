@@ -1,6 +1,6 @@
 # Fileziler
 
-    Fileziler is a command-line utility written in Rust that allows you to compress and decompress files using the Gzip algorithm. It supports files of any type and size, making it a versatile tool for file management.
+Fileziler is a command-line utility written in Rust that allows you to compress and decompress files using the Gzip algorithm. It supports files of any type and size, making it a versatile tool for file management.
 
 ## Features
 + Compress files: Reduce the size of your files using Gzip compression.
